@@ -23,12 +23,21 @@ EasyChatGPT-API 是一个使用 [OpenAI GPT-3.5 API](https://openai.com/)（也�
 3.  安装依赖
 
 `pip install flask markupsafe openai markdown` 
+`pip install openai mysql-connector-python` 
 
 4. 在 'app.py' 中设置你自己的 OpenAI APE key
 
 `openai.api_key = 'YOUR_API_KEY'` 
 
-5.  运行项目
+5. 创建Mysql表格
+
+`CREATE TABLE conversation_history (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_input TEXT NOT NULL,
+    model_response TEXT NOT NULL
+);` 
+
+6.  运行项目
 
 `python app.py` 
 
